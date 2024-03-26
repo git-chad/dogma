@@ -22,11 +22,17 @@ const UploadCareButton = ({ onUpload }: Props) => {
         router.refresh();
       }
     };
-    ctxProviderRef.current.addEventListener(
-      "file-upload-success",
-      handleUpload
-    );
-  }, []);
+
+    if (ctxProviderRef.current) {
+      ctxProviderRef.current.addEventListener("file-upload-success", handleUpload);
+    }
+    
+    return () => {
+      if (ctxProviderRef.current) {
+        ctxProviderRef.current.removeEventListener("file-upload-success", handleUpload);
+      }
+    };
+  }, [onUpload, router]);
 
   return (
     <div>
