@@ -3,6 +3,7 @@ import Image from "next/image";
 import dogmaLogo from "../../../public/dogma-logo.svg";
 import Link from "next/link";
 import { MenuIcon } from "lucide-react";
+import { UserButton } from "@clerk/nextjs";
 
 const Navbar = async () => {
   const user = true;
@@ -46,6 +47,7 @@ const Navbar = async () => {
       {user ? "Dashboard" : "Get Started"}
     </span>
   </Link>
+  <UserButton/>
   <MenuIcon className="md:hidden"/>
 </aside>
 
