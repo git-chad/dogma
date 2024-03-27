@@ -42,7 +42,7 @@ const SettingsPage = async () => {
       <h1 className="text-3xl sticky top-0 z-[10] p-6 bg-background/50 backdrop-blur-lg flex items-center border-b font-semibold">
         Settings
       </h1>
-      <div className="flex flex-col gap-10 p-6 max-w-3xl">
+      <div className="flex flex-col gap-10 p-6 max-w-7xl">
         <div>
           <h2 className="text-2xl font-bold">User profile</h2>
           <p className="text-white/50">Add or update your information</p>

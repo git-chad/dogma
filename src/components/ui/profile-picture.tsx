@@ -21,7 +21,7 @@ const ProfilePicture = ({ userImage, onDelete, onUpload }: Props) => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-2/3">
       <p className="text-md text-zinc-50 font-semibold">Profile picture</p>
       <div className="flex flex-col items-center justify-center">
         {userImage ? (

@@ -22,7 +22,7 @@ type Props = {};
 const Sidebar = (props: Props) => {
   const pathname = usePathname();
   return (
-    <nav className="dark:bg-black h-screen overflow-scroll flex flex-col items-center justify-between gap-10 py-6 px-3">
+    <nav className="dark:bg-black h-screen overflow-scroll flex flex-col items-center justify-between gap-10 py-6 px-3 z-50">
       <div className="flex flex-col justify-center items-center gap-8">
         <Link className="flex font-bold text-lg" href="/">
           <Image
