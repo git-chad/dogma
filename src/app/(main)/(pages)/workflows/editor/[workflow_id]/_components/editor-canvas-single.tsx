@@ -4,7 +4,9 @@ import React, { useMemo } from "react";
 import { Position, useNodeId } from "reactflow";
 import EditorCanvasIcons from "./editor-canvas-icon";
 import CustomHandle from "./custom-handle";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import clsx from "clsx";
 
 const EditorCardSingle = ({ data }: { data: EditorCanvasCardType }) => {
   const { dispatch, state } = useEditor();
@@ -48,7 +50,24 @@ const EditorCardSingle = ({ data }: { data: EditorCanvasCardType }) => {
             </CardDescription>
           </div>
         </CardHeader>
+        <Badge variant="secondary" className="absolute top-2 right-2">
+          {data.type}
+        </Badge>
+        <div
+        className={clsx("absolute left-3 top-4 size-2 rounded-full", {
+          "bg-emerald-500": Math.random() < 0.6,
+          "bg-orange-500": Math.random() >= 0.6 && Math.random() < 0.8,
+          "bg-rose-500": Math.random() >= 0.8,
+        })}
+        >
+
+        </div>
       </Card>
+      <CustomHandle
+      type="source"
+      position={Position.Bottom}
+      id="a"
+      />
     </>
   );
 };

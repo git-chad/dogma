@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import ModalProvider from "@/providers/modal-provider";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -27,7 +28,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <ModalProvider>{children}</ModalProvider>
+            <ModalProvider>
+              {children}
+              <Toaster />
+            </ModalProvider>
           </ThemeProvider>
         </body>
       </html>
