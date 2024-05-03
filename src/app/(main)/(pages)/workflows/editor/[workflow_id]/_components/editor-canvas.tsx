@@ -1,7 +1,7 @@
 "use client";
 import { EditorCanvasCardType, EditorNodeType } from "@/lib/types";
 import { useEditor } from "@/providers/editor-provider";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import ReactFlow, {
   Background,
   Connection,
@@ -59,6 +59,11 @@ const EditorCanvas = () => {
     }),
     []
   );
+
+  // update canvas on drag action
+  useEffect(() => {
+    dispatch({type: "LOAD_DATA", payload: {edges, elements: nodes}})
+  }, [nodes, edges])
 
   const onDrop = useCallback(
     (event: any) => {
